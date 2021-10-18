@@ -55,15 +55,14 @@ for c_item in c: #iterates over c
                     class_predicted = clf.predict([item[:-1]])[0]
                     if class_predicted == item[-1]:
                         count += 1
-                accuracy = count / len(dbTest)
 
-                if accuracy > highestAccuracy:
-                    highestAccuracy = accuracy
-                    print("Highest SVM accuracy so far: {}, Parameters: a={}, degree={}, kernel= {}, decision_function_shape = {}".format(accuracy, c_item, deg_item, ker_item, shape_item ))
                 #check if the calculated accuracy is higher than the previously one calculated. If so, update update the highest accuracy and print it together with the SVM hyperparameters
                 #Example: "Highest SVM accuracy so far: 0.92, Parameters: a=1, degree=2, kernel= poly, decision_function_shape = 'ovo'"
                 #--> add your Python code here
-
+                accuracy = count / len(dbTest)
+                if accuracy > highestAccuracy:
+                    highestAccuracy = accuracy
+                    print("Highest SVM accuracy so far: {}, Parameters: a={}, degree={}, kernel= {}, decision_function_shape = {}".format(accuracy, c_item, deg_item, ker_item, shape_item ))
 
 
 
